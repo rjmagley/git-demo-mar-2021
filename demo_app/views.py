@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, HttpResponse
 # Create your views here.
 def index(request):
     context{
-        "allModel" : ExampleModel.objects.all()
+        "allModels" : ExampleModel.objects.all()
     }
     return render("hello!")
 
