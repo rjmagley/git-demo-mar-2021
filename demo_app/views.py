@@ -2,4 +2,13 @@ from django.shortcuts import render, redirect, HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    context{
+        "allModel" : ExampleModel.objects.all()
+    }
+    return render("hello!")
+
+def create(request):
+    ExampleModel.objects.create(
+        name = request.POST["name"]
+    )
+    return redirect("/")
