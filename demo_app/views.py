@@ -3,17 +3,13 @@ from .models import ExampleModel
 
 # Create your views here.
 def index(request):
-    context = {
-        'all_the_stuff_from_the_database': ExampleModel.objects.all()
+    context{
+        "all_models" : ExampleModel.objects.all()
     }
-    return render(request, "index.html", context)
+    return render(request, "index.html", contents)
 
-def add_new_thing(request):
-    # I am a comment
-    # I don't really do anything
-
+def create(request):
     ExampleModel.objects.create(
-        name = request.POST['name'] # this is important!!!
+        name = request.POST["name"]
     )
-
-    return redirect('/')
+    return redirect("/")

@@ -8,15 +8,14 @@
 </head>
 <body>
     <h1>Here are some items from the database:</h1>
-    {% for thing in all_the_stuff_from_the_database %}
-    <p>{{thing.name}}</p>
+    {% for thing in all_models %}
+        <p>{{thing.name}}</p>
     {% endfor %}
 
-    <h1>Add a thing:</h1>
-    <form action='/add_thing' method='POST'>
-        {% csrf_token %}
-        <input type='text' name='name'>
-        <input type='submit'>
+    <form action="/create" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name"> 
+    <input type="submit">
     </form>
 </body>
 </html>
