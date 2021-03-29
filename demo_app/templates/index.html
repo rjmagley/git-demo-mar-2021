@@ -8,13 +8,14 @@
 </head>
 <body>
     <h1>Here are some items from the database:</h1>
-    {% for thing in allModels %}
+    {% for thing in all_models %}
         <p>{{thing.name}}</p>
     {% endfor %}
 
-    <form action="/create" method="POST"></form>
+    <form action="/create" method="POST">
     {% csrf_token %}
     <input type="text" name="name"> 
     <input type="submit">
+    </form>
 </body>
 </html>
